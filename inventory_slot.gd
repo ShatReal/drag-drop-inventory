@@ -36,6 +36,7 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if get_child_count() > 0:
 		var item := get_child(0)
+		if item == data: return
 		remove_child(item)
 		data.get_parent().add_child(item)
 	data.get_parent().remove_child(data)
