@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://gj67avfb1jl6"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_18r0h"]
+[ext_resource type="Texture2D" uid="uid://bmq4jv8cyfh3x" path="res://sprites/Item__44.png" id="2_43p5p"]
+
+[resource]
+script = ExtResource("1_18r0h")
+type = 0
+name = "Helmet"
+description = "It goes on your head."
+texture = ExtResource("2_43p5p")

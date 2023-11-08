@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://duxj7cpiumok0"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_slo3l"]
+[ext_resource type="Texture2D" uid="uid://dqe6hxh214ij5" path="res://sprites/Item__48.png" id="2_m06lr"]
+
+[resource]
+script = ExtResource("1_slo3l")
+type = 3
+name = "Boots"
+description = "Walk in these!"
+texture = ExtResource("2_m06lr")

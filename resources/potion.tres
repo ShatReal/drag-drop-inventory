@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://baldp6dnh6idp"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_pw5ma"]
+[ext_resource type="Texture2D" uid="uid://deeqbhkj1cv42" path="res://sprites/Item__29.png" id="2_wa04c"]
+
+[resource]
+script = ExtResource("1_pw5ma")
+type = 6
+name = "Potion"
+description = "Drink this to regain health."
+texture = ExtResource("2_wa04c")

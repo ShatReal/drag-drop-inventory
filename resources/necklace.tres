@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://baob08x3cdvcg"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_423tg"]
+[ext_resource type="Texture2D" uid="uid://dwjsh247otcxp" path="res://sprites/Item__32.png" id="2_3infg"]
+
+[resource]
+script = ExtResource("1_423tg")
+type = 5
+name = "Necklace"
+description = "It's shiny!"
+texture = ExtResource("2_3infg")

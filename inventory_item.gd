@@ -1,18 +1,20 @@
-extends TextureRect
 class_name InventoryItem
+extends TextureRect
 
 
-enum Type {HEAD, CHEST, LEGS, FEET, WEAPON, ACCESSORY, MAIN}
+@export var data: ItemData
 
-@export var type: Type
+
+func _ready() -> void:
+	expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	texture = data.texture
+	tooltip_text = "%s\n%s" % [data.name, data.description]
 
 
 # Custom init function so that it doesn't error
-func init(t: Type, i: Texture2D) -> void:
-	type = t
-	texture = i
-	expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+func init(d: ItemData) -> void:
+	data = d
 
 
 # _at_position is not used because it doesn't matter where we click on
@@ -28,4 +30,5 @@ func make_drag_preview() -> TextureRect:
 	t.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	t.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	t.custom_minimum_size = size
+	t.modulate.a = 0.5
 	return t

@@ -1,16 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4cyoim416nt3"]
+[gd_scene load_steps=11 format=3 uid="uid://d4cyoim416nt3"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_g6ib7"]
 [ext_resource type="Script" path="res://inventory_slot.gd" id="1_tggo1"]
 [ext_resource type="Texture2D" uid="uid://cer0pfxasiiu7" path="res://sprites/character.png" id="2_plq56"]
 [ext_resource type="Script" path="res://inventory_item.gd" id="3_kqtfw"]
-[ext_resource type="Texture2D" uid="uid://bmq4jv8cyfh3x" path="res://sprites/Item__44.png" id="3_n62rl"]
-[ext_resource type="Texture2D" uid="uid://x3h13mjklmbs" path="res://sprites/Item__57.png" id="5_xqnfu"]
-[ext_resource type="Texture2D" uid="uid://dqe6hxh214ij5" path="res://sprites/Item__48.png" id="7_yksbe"]
-[ext_resource type="Texture2D" uid="uid://5oerlj3xal2m" path="res://sprites/Item__01.png" id="8_48eys"]
-[ext_resource type="Texture2D" uid="uid://dwjsh247otcxp" path="res://sprites/Item__32.png" id="9_wufch"]
-[ext_resource type="Texture2D" uid="uid://jg0utwfii1v5" path="res://sprites/Item__68.png" id="10_hopfa"]
-[ext_resource type="Texture2D" uid="uid://c3mff6f3clhyh" path="res://sprites/Item__16.png" id="11_fy7aw"]
-[ext_resource type="Texture2D" uid="uid://deeqbhkj1cv42" path="res://sprites/Item__29.png" id="12_ictd1"]
+[ext_resource type="Resource" uid="uid://gj67avfb1jl6" path="res://resources/helmet.tres" id="4_61ymh"]
+[ext_resource type="Resource" uid="uid://m2fyldjinlke" path="res://resources/chestplate.tres" id="5_fgbng"]
+[ext_resource type="Resource" uid="uid://dutep513a1qn6" path="res://resources/pants.tres" id="7_o7bec"]
+[ext_resource type="Resource" uid="uid://duxj7cpiumok0" path="res://resources/boots.tres" id="8_2qysx"]
+[ext_resource type="Resource" uid="uid://fwlatl26b3k7" path="res://resources/sword.tres" id="9_8n0ox"]
+[ext_resource type="Resource" uid="uid://baob08x3cdvcg" path="res://resources/necklace.tres" id="10_mtdhq"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -19,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g6ib7")
 metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -48,12 +48,10 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 script = ExtResource("1_tggo1")
 
-[node name="Helm" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HeadSlot"]
+[node name="Helmet" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/HeadSlot"]
 layout_mode = 2
-texture = ExtResource("3_n62rl")
-expand_mode = 1
-stretch_mode = 5
 script = ExtResource("3_kqtfw")
+data = ExtResource("4_61ymh")
 
 [node name="ChestSlot" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 64)
@@ -61,13 +59,10 @@ layout_mode = 2
 script = ExtResource("1_tggo1")
 type = 1
 
-[node name="Armor" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/ChestSlot"]
+[node name="Chestplate" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer2/ChestSlot"]
 layout_mode = 2
-texture = ExtResource("5_xqnfu")
-expand_mode = 1
-stretch_mode = 5
 script = ExtResource("3_kqtfw")
-type = 1
+data = ExtResource("5_fgbng")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(256, 0)
@@ -87,6 +82,11 @@ layout_mode = 2
 script = ExtResource("1_tggo1")
 type = 2
 
+[node name="Pants" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/LegsSlot"]
+layout_mode = 2
+script = ExtResource("3_kqtfw")
+data = ExtResource("7_o7bec")
+
 [node name="FeetSlot" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -95,11 +95,8 @@ type = 3
 
 [node name="Boots" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer/FeetSlot"]
 layout_mode = 2
-texture = ExtResource("7_yksbe")
-expand_mode = 1
-stretch_mode = 5
 script = ExtResource("3_kqtfw")
-type = 3
+data = ExtResource("8_2qysx")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -114,11 +111,8 @@ type = 4
 
 [node name="Sword" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/WeaponSlot"]
 layout_mode = 2
-texture = ExtResource("8_48eys")
-expand_mode = 1
-stretch_mode = 5
 script = ExtResource("3_kqtfw")
-type = 4
+data = ExtResource("9_8n0ox")
 
 [node name="AccessorySlot" type="PanelContainer" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer3"]
 custom_minimum_size = Vector2(64, 64)
@@ -128,567 +122,13 @@ type = 5
 
 [node name="Necklace" type="TextureRect" parent="PanelContainer/HBoxContainer/VBoxContainer2/HBoxContainer3/AccessorySlot"]
 layout_mode = 2
-texture = ExtResource("9_wufch")
-expand_mode = 1
-stretch_mode = 5
 script = ExtResource("3_kqtfw")
-type = 5
+data = ExtResource("10_mtdhq")
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer"]
+[node name="Grid" type="GridContainer" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 11
-
-[node name="InventorySlot" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="Key" type="TextureRect" parent="PanelContainer/HBoxContainer/GridContainer/InventorySlot"]
-layout_mode = 2
-texture = ExtResource("10_hopfa")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("3_kqtfw")
-type = 6
-
-[node name="InventorySlot2" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="Bow" type="TextureRect" parent="PanelContainer/HBoxContainer/GridContainer/InventorySlot2"]
-layout_mode = 2
-texture = ExtResource("11_fy7aw")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("3_kqtfw")
-type = 4
-
-[node name="InventorySlot3" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="Potion" type="TextureRect" parent="PanelContainer/HBoxContainer/GridContainer/InventorySlot3"]
-layout_mode = 2
-texture = ExtResource("12_ictd1")
-expand_mode = 1
-stretch_mode = 5
-script = ExtResource("3_kqtfw")
-type = 6
-
-[node name="InventorySlot4" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot5" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot6" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot7" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot8" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot9" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot10" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot11" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot12" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot13" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot14" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot15" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot16" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot17" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot18" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot19" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot20" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot21" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot22" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot23" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot24" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot25" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot26" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot27" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot28" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot29" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot30" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot31" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot32" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot33" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot34" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot35" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot36" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot37" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot38" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot39" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot40" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot41" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot42" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot43" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot44" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot45" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot46" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot47" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot48" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot49" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot50" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot51" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot52" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot53" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot54" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot55" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot56" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot57" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot58" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot59" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot60" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot61" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot62" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot63" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot64" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot65" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot66" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot67" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot68" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot69" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot70" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot71" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot72" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot73" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot74" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot75" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot76" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot77" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot78" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot79" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot80" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot81" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot82" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot83" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot84" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot85" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot86" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot87" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6
-
-[node name="InventorySlot88" type="PanelContainer" parent="PanelContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-script = ExtResource("1_tggo1")
-type = 6

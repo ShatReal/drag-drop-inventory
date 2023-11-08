@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://m2fyldjinlke"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_i0ifp"]
+[ext_resource type="Texture2D" uid="uid://x3h13mjklmbs" path="res://sprites/Item__57.png" id="2_45ijm"]
+
+[resource]
+script = ExtResource("1_i0ifp")
+type = 1
+name = "Chestplate"
+description = "It's armor!"
+texture = ExtResource("2_45ijm")

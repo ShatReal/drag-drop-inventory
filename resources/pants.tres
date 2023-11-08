@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dutep513a1qn6"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_e3540"]
+[ext_resource type="Texture2D" uid="uid://b33oxgfk3hy67" path="res://sprites/pants.png" id="2_lx8fw"]
+
+[resource]
+script = ExtResource("1_e3540")
+type = 2
+name = "Pants"
+description = "Looks uncomfortable to wear..."
+texture = ExtResource("2_lx8fw")

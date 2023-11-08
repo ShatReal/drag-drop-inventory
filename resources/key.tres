@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cr1shvc0pa8x2"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_lhkni"]
+[ext_resource type="Texture2D" uid="uid://jg0utwfii1v5" path="res://sprites/Item__68.png" id="2_xgmat"]
+
+[resource]
+script = ExtResource("1_lhkni")
+type = 6
+name = "Key"
+description = "Unlocks things."
+texture = ExtResource("2_xgmat")

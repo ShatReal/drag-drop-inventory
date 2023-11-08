@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://fwlatl26b3k7"]
+
+[ext_resource type="Script" path="res://item_data.gd" id="1_3ruct"]
+[ext_resource type="Texture2D" uid="uid://5oerlj3xal2m" path="res://sprites/Item__01.png" id="2_jad50"]
+
+[resource]
+script = ExtResource("1_3ruct")
+type = 4
+name = "Sword"
+description = "Swoosh!"
+texture = ExtResource("2_jad50")
